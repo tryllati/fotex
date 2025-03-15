@@ -1,0 +1,11 @@
+services:
+  nginx:
+    ports:
+      - "80:80"
+    extra_hosts:
+      - "phpmyadmin.local:127.0.0.1"
+      - "fotex.local:127.0.0.1"
+      
+  phpmyadmin:
+    expose:
+      - "80"
