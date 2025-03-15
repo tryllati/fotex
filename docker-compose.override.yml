@@ -6,6 +6,11 @@ services:
       - "phpmyadmin.local:127.0.0.1"
       - "fotex.local:127.0.0.1"
       
+  php:
+    volumes:
+      - .:/var/www/html:delegated
+      - /var/www/html/vendor
+      
   phpmyadmin:
     expose:
       - "80"

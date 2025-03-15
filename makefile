@@ -1,9 +1,4 @@
-.PHONY: init up down restart migrate seed cache logs
-
-# build project
-init:
-	composer install
-	$(MAKE) up
+.PHONY: up down restart migrate seed cache logs
 
 # Docker konténerek indítása
 up:
