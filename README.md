@@ -149,6 +149,9 @@ Deletes a movie by its ID.
 GET /projections
 ```
 
+**Description:**
+Returns a list of all available movies.
+
 **Response:**
 
 - **200 OK**
@@ -182,6 +185,9 @@ If no projections are found:
 ```
 POST /projection/create
 ```
+
+**Description:**
+Create a new projection
 
 **Request Parameters:**
 
