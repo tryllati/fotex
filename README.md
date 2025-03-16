@@ -6,7 +6,7 @@ Creating a basic rest api based on the desired parameters
 To create the docker environment, issue the `make up` command in the root directory.
 (The host files for nginx are available in the `./storage/conf/nginx/default.conf` file)
 
-### Host fájl létrehozása 
+### Create a host file
 Let's add the following redirects to our **hosts** file.
 
 ```
