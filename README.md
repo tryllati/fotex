@@ -15,7 +15,7 @@ Let's add the following redirects to **hosts** file.
 ```
 
 ### Create migration
-o create the database tables, issue the `make migrate` command.
+To create the database tables, issue the `make migrate` command.
 
 ### Create test data
 To create the test data, issue the `make seed` command.
@@ -239,8 +239,6 @@ Updates a specific field of a projection by its ID.
 | id        | int    | Yes      | The ID of the projection           | 1             |
 | field     | string | Yes      | The field to be updated       | "empty_place" |
 | {field}   | mixed | Yes      | The new value for the specified field. | 12            |
-
-**Response:**
 
 **Response:**
 ```
