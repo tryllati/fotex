@@ -7,14 +7,14 @@ To create the docker environment, issue the `make up` command in the root direct
 (The host files for nginx are available in the `./storage/conf/nginx/default.conf` file)
 
 ### Create a host file
-Let's add the following redirects to our **hosts** file.
+Let's add the following redirects to **hosts** file.
 
 ```
 127.0.0.1 phpmyadmin.local # if needed
 127.0.0.1 fotex.local
 ```
 
-### Create a migration
+### Create migration
 o create the database tables, issue the `make migrate` command.
 
 ### Create test data
@@ -223,36 +223,43 @@ POST /projection/create
 ```
 POST /projection/update/{id}/field/{field}
 ```
+**Description:**
+Updates a specific field of a projection by its ID.
 
 **Request Parameters:**
 
-| Parameter | Type  | Required | Description |
-|-----------|------|----------|-------------|
-| {field}   | mixed | Yes      | The new value for the specified field. |
+| Parameter | Type  | Required | Description | Example       |
+|-----------|------|----------|-------------|---------------|
+| id        | int    | Yes      | The ID of the projection           | 1             |
+| field     | string | Yes      | The field to be updated       | "empty_place" |
+| {field}   | mixed | Yes      | The new value for the specified field. | 12            |
 
 **Response:**
 
-- **204 No Content** (Successfully updated)
-
-If the projection does not exist:
-```json
-null
+**Response:**
+```
+204 No Content
 ```
 
 ---
 
 ### 4. Delete a projection
-
 **Endpoint:**
 ```
 DELETE /projection/delete/{id}
 ```
+**Description:**
+Deletes a projection by its ID.
+
+**Request Parameters:**
+
+| Parameter | Type | Required | Description           | Example |
+|-----------|------|----------|-----------------------|---------|
+| id        | int  | Yes      | The ID of the projection  | 1       |
 
 **Response:**
-
-- **204 No Content** (Successfully deleted)
-
-If the projection does not exist:
-```json
-null
 ```
+204 No Content
+```
+
+
