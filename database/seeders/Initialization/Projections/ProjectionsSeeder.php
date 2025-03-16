@@ -14,11 +14,11 @@ class ProjectionsSeeder extends Seeder
     public function run(): void
     {
         DB::table('projections')->insert([
-            'date'        => '2025.12.23 20:00',
+            'date'        => '2025-12-23 20:00:00',
             'empty_place' => 128,
             'movie_id'    => 2,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
+            'created_at'  => Carbon::now(),
+            'updated_at'  => Carbon::now(),
         ]);
     }
 }

@@ -16,16 +16,25 @@ use Illuminate\Support\Carbon;
  * @property Carbon $updated_at
  * @property-read Movie $movies
  */
-class Projections extends Model
+class Projection extends Model
 {
     use HasFactory;
+
+    /**
+     * The attributes that aren't mass assignable.
+     *
+     * @var array<string>|bool
+     */
+    protected $guarded = [];
 
     /**
      * @var array<string, string>
      */
     protected $casts = [
-        'session_id' => 'integer',
-        'data'       => 'array',
+        'id'          => 'integer',
+        'date'        => 'datetime',
+        'empty_place' => 'integer',
+        'movie_id'    => 'integer',
     ];
 
     /**

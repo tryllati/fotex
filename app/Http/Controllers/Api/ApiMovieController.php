@@ -7,7 +7,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class ApiMoviesController extends ApiController
+class ApiMovieController extends ApiController
 {
     /**
      * Create a new movie.
@@ -83,7 +83,7 @@ class ApiMoviesController extends ApiController
         $movies = new Movie();
 
         if($movies->all()->count() === 0){
-            return response()->json(['movies' => []], 200);
+            return response()->json(['movie' => []], 200);
         }
 
         return response()->json(['movies' => $movies->all()], 200);
@@ -109,7 +109,7 @@ class ApiMoviesController extends ApiController
             return response()->json(null, 204);
         }
 
-        $movie->makeHidden(["created_at", "updated_at"]);
+        $movie->makeHidden(["id", "created_at", "updated_at"]);
 
         if(isset($movie->{$field})){
             $movie->update([

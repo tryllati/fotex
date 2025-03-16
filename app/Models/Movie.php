@@ -17,7 +17,7 @@ use Illuminate\Support\Carbon;
  * @property string $cover_image
  * @property Carbon $created_at
  * @property Carbon $updated_at
- * @property-read Projections $projections
+ * @property-read Projection $projections
  */
 class Movie extends Model
 {
@@ -43,10 +43,10 @@ class Movie extends Model
     ];
 
     /**
-     * @return BelongsTo<Projections, Movie>
+     * @return BelongsTo<Projection, Movie>
      */
     public function projections(): BelongsTo
     {
-        return $this->belongsTo(Projections::class);
+        return $this->belongsTo(Projection::class);
     }
 }
