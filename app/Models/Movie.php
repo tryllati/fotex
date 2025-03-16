@@ -24,19 +24,22 @@ class Movie extends Model
     use HasFactory;
 
     /**
-     * Indicates if the model should be timestamped.
+     * The attributes that aren't mass assignable.
      *
-     * @var bool
+     * @var array<string>|bool
      */
-    public $timestamps = false;
+    protected $guarded = [];
 
     /**
      * @var array<string, mixed>
      */
     protected $casts = [
-        'session_id' => 'integer',
-        'data'       => 'array',
-        'language'   => MovieLanguageTypeEnum::class,
+        'id'          => 'integer',
+        'name'        => 'string',
+        'description' => 'string',
+        'age_limit'   => 'int',
+        'language'    => MovieLanguageTypeEnum::class,
+        'cover_image' => 'string',
     ];
 
     /**

@@ -1,6 +1,7 @@
 # PHP 8.4 fpm
 FROM php:8.4-fpm
 
+# Frissítjük a csomaglistát és telepítjük a szükséges kiterjesztéseket
 RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
@@ -12,7 +13,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd pdo pdo_mysql \
     && rm -rf /var/lib/apt/lists/*  # Takarítjuk az apt cache-t
-	
+
 # Futtasd a composer install-t (csak a szükséges csomagokat telepíti)
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
