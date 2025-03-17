@@ -8,7 +8,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ApiCallerCheckMiddleware
 {
-
     /**
      * Handle an incoming request.
      *
@@ -19,8 +18,6 @@ class ApiCallerCheckMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-
-        /* EZT ELLENŐRIZNI KELL */
         if (! $request->routeIs('api.*')) {
             return new Response('permission denied', 403);
         }
