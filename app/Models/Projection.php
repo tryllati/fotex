@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Carbon;
 
 /**
@@ -38,10 +38,10 @@ class Projection extends Model
     ];
 
     /**
-     * @return HasMany<Movie>
+     * @return HasOne<Movie>
      */
-    public function movies(): HasMany
+    public function movie(): HasOne
     {
-        return $this->hasMany(Movie::class);
+        return $this->hasOne(Movie::class, 'id', 'movie_id');
     }
 }

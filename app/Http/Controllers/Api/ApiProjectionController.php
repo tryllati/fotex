@@ -67,9 +67,20 @@ class ApiProjectionController extends ApiController
      *       "id": 1,
      *       "date": "2025-12-23 21:00:00",
      *       "empty_place": 50,
-     *       "movie_id": 1,
+     *       "movie_id": 2,
      *       "created_at": "2025-03-16T15:05:52.000000Z",
      *       "updated_at": "2025-03-16T15:05:52.000000Z"
+     *       "movie":
+     *          {
+     *              "id": 2,
+     *              "name": "Captain America: Brave New World",
+     *              "description": "Some time after the events of The Falcon and the Winter Soldier, Sam Wilson has now fully embraced his title as the new Captain America. Now Sam is summoned to the White House as the new president Ross wants to work with him on rebuilding the Avengers. But trouble ensues when Sam's friend Isaiah Bradley uncontrollably tries to assassinate the president and is framed for the attempt.",
+     *              "age_limit": 16,
+     *              "language": "angol",
+     *              "cover_image": "captainamericabravenewworld.jpeg",
+     *              "created_at": "2025-03-17T17:16:59.000000Z",
+     *              "updated_at": "2025-03-17T17:16:59.000000Z"
+     *          }
      *     }
      *   ]
      * }
@@ -82,7 +93,7 @@ class ApiProjectionController extends ApiController
             return response()->json(['projection' => []], 200);
         }
 
-        return response()->json(['projections' => $projection->all()], 200);
+        return response()->json(['projections' => $projection::with('movie')->get()], 200);
     }
 
     /**

@@ -45,8 +45,8 @@ class Movie extends Model
     /**
      * @return BelongsTo<Projection, Movie>
      */
-    public function projections(): BelongsTo
+    public function projection(): BelongsTo
     {
-        return $this->belongsTo(Projection::class);
+        return $this->belongsTo(Projection::class, 'movie_id', 'id');
     }
 }
