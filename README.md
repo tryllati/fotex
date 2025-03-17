@@ -51,7 +51,8 @@ Returns a list of all available movies.
       "language": "English",
       "cover_image": "inception.jpg",
       "created_at": "2025-03-16T14:27:28.000000Z",
-      "updated_at": "2025-03-16T14:27:28.000000Z"
+      "updated_at": "2025-03-16T14:27:28.000000Z",
+      "image_url": "http://fotex.local/images/movies/cover/inception.jpg"
     }
   ]
 }
@@ -173,7 +174,8 @@ Returns a list of all available movies.
         "language": "angol",
         "cover_image": "captainamericabravenewworld.jpeg",
         "created_at": "2025-03-17T17:16:59.000000Z",
-        "updated_at": "2025-03-17T17:16:59.000000Z"
+        "updated_at": "2025-03-17T17:16:59.000000Z", 
+        "image_url": "http://fotex.local/images/movies/cover/captainamericabravenewworld.jpeg"
       }  
     }
   ]

@@ -23,12 +23,21 @@ class Movie extends Model
 {
     use HasFactory;
 
+    const COVER_IMAGE_PATH =  'images/movies/cover';
+
     /**
      * The attributes that aren't mass assignable.
      *
      * @var array<string>|bool
      */
     protected $guarded = [];
+
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = ['image_url'];
 
     /**
      * @var array<string, mixed>
@@ -41,6 +50,16 @@ class Movie extends Model
         'language'    => MovieLanguageTypeEnum::class,
         'cover_image' => 'string',
     ];
+
+    /**
+     * Merge cover image and file path
+     *
+     * @return string
+     */
+    public function getImageUrlAttribute(): string
+    {
+        return asset(self::COVER_IMAGE_PATH . DIRECTORY_SEPARATOR .$this->cover_image);
+    }
 
     /**
      * @return BelongsTo<Projection, Movie>

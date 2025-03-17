@@ -37,7 +37,7 @@ class ApiMovieController extends ApiController
 
         $image = $request->file('cover_image');
 
-        $destinationPath = public_path('images/movies/cover');
+        $destinationPath = public_path(Movie::COVER_IMAGE_PATH);
 
         if (!file_exists($destinationPath)) {
             mkdir($destinationPath, 0775, true);
@@ -74,6 +74,7 @@ class ApiMovieController extends ApiController
      *       "cover_image": "inception.jpg",
      *       "created_at": "2025-03-16T14:27:28.000000Z",
      *       "updated_at": "2025-03-16T14:27:28.000000Z"
+     *       "image_url": "http://fotex.local/images/movies/cover/inception.jpg"
      *     }
      *   ]
      * }
