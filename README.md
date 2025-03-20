@@ -1,6 +1,14 @@
 # Homework 
 Creating a basic rest api based on the desired parameters
 
+## Main parameters
+
+- Use dockerized environment and Laravel framework
+- Implementation and integration of any relational database
+- Include a Movie and Projection tables (task contain the result)
+- Make test data
+- Rest api implementation for data management of these tables
+- Api documentation
 
 ## Install
 To create the docker environment, issue the `make up` command in the root directory.
