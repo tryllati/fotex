@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\ApiMovieController;
 use App\Http\Controllers\Api\ApiProjectionController;
+use App\Http\Controllers\Api\ApiTestController;
 use Illuminate\Support\Facades\Route;
 
 Route::name('api.')
@@ -22,4 +23,9 @@ Route::name('api.')
         Route::post('/projection/create', [ApiProjectionController::class, 'create']);
         Route::post('/projection/update/{id}/field/{field}', [ApiProjectionController::class, 'update']);
         Route::delete('/projection/delete/{id}', [ApiProjectionController::class, 'delete']);
+
+        /**
+         * Tests
+         */
+        Route::get('/tests', [ApiTestController::class, 'fetch']);
 });
